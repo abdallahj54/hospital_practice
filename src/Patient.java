@@ -32,6 +32,7 @@ public class Patient {
         }
         boolean hasInsurance = ScannerHelper.getString(askInsurance).toUpperCase().startsWith("Y");
 
+        return new Patient(problem, firstName, lastName, dateOfBirth, hasInsurance);
     }
 
     public static boolean isDateOfBirthValid(String dateOfBirth) {
@@ -74,12 +75,20 @@ public class Patient {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "problem='" + problem + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", hasInsurance=" + hasInsurance +
+                ", patientDoctor=" + patientDoctor +
+                '}';
+    }
 
     public static void main(String[] args) {
-        System.out.println(isDateOfBirthValid("01/01/2000")); // true
-        System.out.println(isDateOfBirthValid("-123/01/2000")); // false
-        System.out.println(isDateOfBirthValid("01/234/2000")); // false
-        System.out.println(isDateOfBirthValid("01/234/01"));  // false
+        System.out.println(createPatient());
     }
 
 }
