@@ -22,7 +22,7 @@ public class Doctor {
     public String firstName;
     public String lastName;
     public String speciality;
-    public boolean isAvailable = true;
+    public boolean isAvailable;
 
     public static Doctor getDoctor(String problem){
         problem = problem.toLowerCase();
@@ -47,13 +47,28 @@ public class Doctor {
         if (problem.contains("emergency") || problem.contains("life") || problem.contains("threat") ) speciality = "ER";
         else if (problem.contains("heart")) speciality = "Cardiologist";
         else if (problem.contains("ear") || problem.contains("throat") || problem.contains("nose")) speciality = "ENT";
-        else if (problem.contains("eye")) speciality = "Ophthalmologist";
+        else if (problem.contains("eye") || problem.contains("see")) speciality = "Ophthalmologist";
         else if (problem.contains("skin")) speciality = "Dermatologist";
         else speciality = "PCP";
 
+        return new Doctor(firstName, lastName, speciality, true);
     }
 
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", speciality='" + speciality + '\'' +
+                ", isAvailable=" + isAvailable +
+                '}';
+    }
 
-
-
+    public static void main(String[] args) {
+        System.out.println(getDoctor("My heart is hurting!"));
+        System.out.println(getDoctor("I cannot see!"));
+        System.out.println(getDoctor("My life is in danger!"));
+        System.out.println(getDoctor("My nose is bleeding!"));
+        System.out.println(getDoctor("I cannot walk!"));
+    }
 }
