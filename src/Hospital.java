@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hospital {
-
     public static void main(String[] args) {
-
         /**
          * 1. Create 3 patients
          * 2. Assign 3 doctors according to their problems
@@ -29,8 +27,5 @@ public class Hospital {
             System.out.println(patient.patientDoctor);
             System.out.println(QuestionsAndMessages.goodByeMessage);
         }
-
-
-
     }
 }

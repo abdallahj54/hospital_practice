@@ -63,12 +63,4 @@ public class Doctor {
                 ", isAvailable=" + isAvailable +
                 '}';
     }
-
-    public static void main(String[] args) {
-        System.out.println(getDoctor("My heart is hurting!"));
-        System.out.println(getDoctor("I cannot see!"));
-        System.out.println(getDoctor("My life is in danger!"));
-        System.out.println(getDoctor("My nose is bleeding!"));
-        System.out.println(getDoctor("I cannot walk!"));
-    }
 }

@@ -93,15 +93,4 @@ public class Patient {
                 (patientDoctor == null ? "You have no doctor available!" : patientDoctor.firstName + " " + patientDoctor.lastName) + '\'' +
                 '}';
     }
-
-    public static void main(String[] args) {
-        Patient patient = createPatient();
-
-        System.out.println(patient);
-
-        patient.patientDoctor = Doctor.getDoctor(patient.problem);
-        System.out.println(patient);
-        System.out.println(patient.patientDoctor);
-    }
-
 }
